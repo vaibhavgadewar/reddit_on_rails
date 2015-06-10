@@ -9,7 +9,6 @@
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-<%= yield %>
 
 <%# User is logged in , show logout link %>
 <% if current_user.present? %>
@@ -19,5 +18,8 @@
 	<%= link_to 'Sign In', new_user_session_path %> |
 	<%= link_to 'Register Now!', new_user_registration_path %>
 <% end %>
+
+<%= yield %>
+
 </body>
 </html>

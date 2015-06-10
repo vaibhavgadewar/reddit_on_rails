@@ -1,0 +1,18 @@
+<h2>This is a links show page</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Link</th>
+    <th>Votes</th>
+  </tr>
+
+<% @link.each do |link| %>
+  <tr>
+    <td><%= link.title %></td>
+    <td><%= link.url %></td>
+    <td><%=  %></td>
+    
+  </tr>
+<% end %>
+</table>

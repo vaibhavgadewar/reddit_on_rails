@@ -1,7 +1,8 @@
 class LinksController < ApplicationController
 	
 	def show
-		@link = Link.all
+		@link = Link.find(params[:id])
+    @comment = Comment.new
 
     	respond_to do |format|
       		format.html # show.html.erb
@@ -40,7 +41,7 @@ class LinksController < ApplicationController
       @link = Link.find(params[:id])
 
       respond_to do |format|
-      	if @link.update_attributes(params[:idea])
+      	if @link.update_attributes(params[:link])
       		format.html { redirect_to @link, notice: 'Link was successfully updated.' }
         	format.json { head :no_content }
       	else

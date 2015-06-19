@@ -3,7 +3,7 @@ require 'test_helper'
 class SearchTest < ActionDispatch::IntegrationTest
 	test "search for items in database works" do
 		#visit index_pages_path
-		visit '/'
+		visit pages_path
 
 		visit new_link_path
 		title = "Ruby Tutorial"

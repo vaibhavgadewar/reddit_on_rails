@@ -22,9 +22,19 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'faker'
+
+group :development,:test do
+	%w(rspec-rails rspec rspec-core rspec-expectations rspec-mocks rspec-support).each do |lib|
+    	gem lib#, :git => "git://github.com/rspec/#{lib}.git", :branch => 'master', :require => false
+	end
+	gem 'factory_girl_rails'#, :require => false
+end
+
 group :test do
 	gem 'database_cleaner'
-	gem 'capybara', '~> 1.1.2'
+	gem 'capybara', '~> 2.2.0'
+	gem 'capybara-webkit'
 	gem 'launchy'
 end
 

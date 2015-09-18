@@ -18,7 +18,7 @@ feature "Vote for link" do
 		#save_and_open_page
 
 		page.all(:link, '+')[1].click
-		save_and_open_page
+		#save_and_open_page
 		expect(page).not_to have_content 'You need to sign in or sign up before continuing.'
 		
 	end

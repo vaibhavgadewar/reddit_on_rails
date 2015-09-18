@@ -23,7 +23,7 @@ feature "Link Create Test" do
 
         expect(page.current_path).not_to eq new_user_session_path
 
-        save_and_open_page
+        #save_and_open_page
     
         visit new_link_path
         title = "Random Title: #{Time.now.to_f}"
@@ -34,6 +34,6 @@ feature "Link Create Test" do
         
         expect(page.current_path).to eq link_path(link)
 
-        save_and_open_page
+        #save_and_open_page
     end
 end

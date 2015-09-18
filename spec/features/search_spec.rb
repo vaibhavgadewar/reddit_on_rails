@@ -18,7 +18,7 @@ feature "Search test" do
         fill_in 'q', :with => 'Random Title'
         click_button 'Search'
         puts true
-        save_and_open_page
+        #save_and_open_page
 
         expect(page).to have_content("Random Title")
     end

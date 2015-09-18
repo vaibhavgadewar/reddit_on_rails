@@ -18,7 +18,7 @@ feature "Sign up Test" do
 
 		visit new_user_registration_path
 
-		email = "abcd1@example.com"
+		email = "abcd1234@example.com"
 		fill_in 'user_email', :with => email
 		fill_in 'user_password', :with => "password"
 		fill_in 'user_password_confirmation', :with => "password"
@@ -54,7 +54,7 @@ feature "Sign up Test" do
 		fill_in 'user_password_confirmation', :with => "pass"
 		click_button 'Sign up'
 
-		expect(page).to have_content 'Password does not match confirmation'
+		expect(page).to have_content "Password doesn't match confirmation"
 
 	end
 

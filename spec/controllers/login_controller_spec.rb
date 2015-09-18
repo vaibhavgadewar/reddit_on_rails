@@ -1,3 +1,4 @@
+
 describe "Authentication" do
 	
 	it "blocks unauthenticated access" do

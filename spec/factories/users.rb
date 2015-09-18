@@ -1,4 +1,4 @@
-require 'faker'
+#require 'faker'
 
 FactoryGirl.define do
   factory :user do
@@ -6,6 +6,6 @@ FactoryGirl.define do
     password "password"
     password_confirmation "password"
     #confirmed_at Date.today
-    initialize_with { new(email, password) } 
+    #initialize_with { new(email, password) } 
   end
 end

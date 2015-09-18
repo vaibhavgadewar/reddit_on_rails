@@ -39,7 +39,7 @@ require 'factory_girl'
 require 'factory_girl_rails'
 #FactoryGirl.find_definitions
 
-#Capybara.javascript_driver = :webkit
+Capybara.javascript_driver = :webkit
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 #require 'active_support'
@@ -64,6 +64,14 @@ RSpec.configure do |config|
 
   config.before(:all) do
     FactoryGirl.reload
+  end
+
+  config.include Warden::Test::Helpers
+  config.before :suite do
+    Warden.test_mode!
+  end
+  config.after :each do
+    Warden.test_reset!
   end
 
  

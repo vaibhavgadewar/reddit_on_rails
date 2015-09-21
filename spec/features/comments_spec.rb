@@ -41,7 +41,7 @@ feature 'User comments on link' do
 		visit new_user_session_path
         expect(page.current_path).to eq "/users/sign_in"
 
-        email = @user.email #"abcd@gmail.com"
+        email = @user.email
         fill_in 'user_email', :with => email
         fill_in 'user_password', :with => 'password'
         click_button 'Log in'

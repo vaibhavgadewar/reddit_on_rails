@@ -28,12 +28,13 @@ feature "Sign up Test" do
 
 	end
 
-	scenario "New user creates an account with existed email" do 
+	scenario "New user creates an account with existed email" do
+		@user = User.create(:email => "#{Time.now.to_f}@example.com", :password => "password")
 		visit pages_path
 
 		visit new_user_registration_path
 
-		email = "abcd1@example.com"
+		email = @user.email #"abcd1@example.com"
 		fill_in 'user_email', :with => email
 		fill_in 'user_password', :with => "password"
 		fill_in 'user_password_confirmation', :with => "password"

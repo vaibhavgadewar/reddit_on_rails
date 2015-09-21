@@ -16,7 +16,7 @@ feature "Vote for link" do
 
 		#expect(page).to have_content 'Signed in successfully.'
 		#save_and_open_page
-
+		puts page.all(:link, '+').count
 		page.all(:link, '+')[1].click
 		#save_and_open_page
 		expect(page).not_to have_content 'You need to sign in or sign up before continuing.'
